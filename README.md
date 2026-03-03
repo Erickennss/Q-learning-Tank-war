@@ -123,5 +123,5 @@ $$Q(s,a) = Q(s,a) + \alpha \times [r + \gamma \times \max(Q(s',a')) - Q(s,a)]$$
 - **Map Customization**: Support multiple map layouts (random wall generation).
 
 ## 📄 License
-This project is for educational purposes only (learning Pygame and Q-Learning). You are free to modify and extend the code for non-commercial use.
+This project is for educational purposes only (learning Pygame and Q-Learning). Personal using.
 
