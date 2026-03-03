@@ -13,8 +13,8 @@ A classic tank battle game implemented in Python (Pygame) with dual gameplay mod
 - **Round-Based Training**: Auto-reset after round victory (max 10 training rounds) with Q-table persistence.
 
 ### Technology Stack
-- **Language**: Python 3.8+
-- **Game Engine**: Pygame 2.5.2+
+- **Language**: Python 3.11
+- **Game Engine**: Pygame 2.6.0
 - **Reinforcement Learning**: Q-Learning (value-based RL algorithm)
 - **Auxiliary Libraries**: Pickle (Q-table persistence), NumPy (state discretization)
 
