@@ -125,5 +125,3 @@ $$Q(s,a) = Q(s,a) + \alpha \times [r + \gamma \times \max(Q(s',a')) - Q(s,a)]$$
 ## 📄 License
 This project is for educational purposes only (learning Pygame and Q-Learning). You are free to modify and extend the code for non-commercial use.
 
-## 📞 Contact
-If you encounter issues (e.g., code bugs, algorithm questions), feel free to raise an issue or contact the developer.
