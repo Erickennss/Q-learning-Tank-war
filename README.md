@@ -8,7 +8,6 @@ A classic tank battle game implemented in Python (Pygame) with dual gameplay mod
   - Human vs AI Mode: Players manually control the tank to fight against AI-driven enemy tanks.
 - **3-Life System**: The player tank has 3 initial lives; the game ends when lives are exhausted.
 - **Anti-Overlap for Enemy Tanks**: Enemy tanks avoid overlap during generation and movement via collision prediction.
-- **Complete Collision Detection**: Supports tank-wall, tank-enemy, bullet-tank/bullet-wall collisions.
 - **Q-Learning Integration**: Discrete state-action space design, ε-greedy exploration strategy, and reward-guided AI learning.
 - **Round-Based Training**: Auto-reset after round victory (max 10 training rounds) with Q-table persistence.
 
