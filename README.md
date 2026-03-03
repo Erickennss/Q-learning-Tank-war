@@ -25,7 +25,7 @@ Download and install Python 3.8 or higher from [Python Official Website](https:/
 ### 2. Install Dependencies
 Run the following command in the terminal to install required libraries:
 ```bash
-pip install pygame numpy
+pip install pygame==2.6.0
 ```
 
 ## 🚀 Quick Start
@@ -44,12 +44,12 @@ python main.py
 - Press `ESC` to exit the game.
 
 #### Mode Selection
-- Press `1` to start **AI Training Mode** (AI controls the tank automatically).
-- Press `2` to start **Human vs AI Mode** (manual control).
+- Press `F1` to start **AI Training Mode** (AI controls the tank automatically).
+- Press `F2` to start **Human vs AI Mode** (manual control).
 - Press `ESC` to return to the main menu.
 
 #### Human Control (Human vs AI Mode)
-- Movement: `W` (Up) / `S` (Down) / `A` (Left) / `D` (Right) (or arrow keys).
+- Movement: `↑` (Up) / `↓` (Down) / `←` (Left) / `→` (Right) (or arrow keys).
 - Shoot: `SPACE` key (max 2 live bullets).
 - Exit: `ESC` key.
 
@@ -67,7 +67,6 @@ python main.py
 | `explosion.py`  | Explosion effect: animated rendering when tanks are destroyed.              |
 | `config.py`     | Game configuration: constants (screen size, tank speed, reward values, Q-Learning parameters). |
 | `base_item.py`  | Base class for all game entities: encapsulates common attributes (position, survival state) and methods (position rollback). |
-| `q_table.pkl`   | Persisted Q-table file (generated after AI training, reused in subsequent runs). |
 
 ### Core Class Overview
 | Class Name       | Core Responsibilities                                                                 |
@@ -114,22 +113,7 @@ $$Q(s,a) = Q(s,a) + \alpha \times [r + \gamma \times \max(Q(s',a')) - Q(s,a)]$$
 | Move away from nearest enemy      | -2           |
 
 ## ❓ FAQ
-### 1. Enemy Tanks Overlap
-**Solution**: The `EnemyTank.randomMove()` method predicts movement positions and detects overlap with other enemies; if overlap is detected, the enemy tank changes direction immediately. Ensure:
-- `randomMove` receives the full enemy tank list as a parameter.
-- `oldLeft`/`oldTop` are recorded in the `move` method of `EnemyTank`.
 
-### 2. AI Tank "Twitches" (Frequent Action Switching)
-**Solution**: Each action is sustained for 5 frames (`ACTION_HOLD_FRAMES = 5`) to stabilize movement; reduce the decision frequency with `time.sleep(0.02)` in the game loop.
-
-### 3. Life System Not Working
-**Checklist**:
-- `MY_TANK_INIT_LIVES = 3` is added in `config.py`.
-- `my_tank_lives` is initialized in `MainGame.init_round()`.
-- Life deduction logic is implemented in `MainGame.start_game()` (reduce life when the tank is destroyed).
-
-### 4. Q-Learning KeyError
-**Solution**: Initialize new states with `[0.0] * 5` in `MainGame.choose_action()` to avoid uninitialized state keys in the Q-table.
 
 ## 🚀 Extension Directions
 - **Deep Q-Network (DQN)**: Replace Q-table with a neural network to handle larger state spaces (e.g., dynamic maps, more enemies).
