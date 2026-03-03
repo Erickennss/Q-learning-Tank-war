@@ -15,7 +15,6 @@ A classic tank battle game implemented in Python (Pygame) with dual gameplay mod
 - **Language**: Python 3.11
 - **Game Engine**: Pygame 2.6.0
 - **Reinforcement Learning**: Q-Learning (value-based RL algorithm)
-- **Auxiliary Libraries**: Pickle (Q-table persistence), NumPy (state discretization)
 
 ## 🛠️ Environment Setup
 ### 1. Install Python
